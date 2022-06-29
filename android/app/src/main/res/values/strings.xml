@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SocialApp</string>
+    <string name="facebook_app_id">426277929114218</string>
+    <string name="facebook_client_token">21ba5fd6e3e1c5da8787ff51a219035b</string>
+</resources>
