@@ -15,6 +15,7 @@ import ProfileScreen from '../screens/ProfileScreen';
 import AddPostScreen from '../screens/AddPostScreen';
 import MessagesScreen from '../screens/MessagesScreen';
 import EditProfileScreen from '../screens/EditProfileScreen';
+import NewsTabs from '../screens/NewsTabs';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -39,7 +40,7 @@ const FeedStack = ({navigation}) => (
                             style={{paddingLeft: 18}}
                             name='plus'
                             size={22}
-                            backgroundColor= '#fff'
+                            backgroundColor= {useTheme().colors.background}
                             color='#2e64e5'
                             onPress={() => navigation.navigate('AddPost')}
                         />
@@ -159,6 +160,23 @@ const AppStack = () => {
                     tabBarIcon: ({color, size}) => (
                         <Ionicons 
                             name='chatbox-ellipses-outline'
+                            color={color}
+                            size={size}
+                        />
+                    ),
+                    headerShown: false
+                })}
+            />
+            <Tab.Screen
+                name='News'
+                component={NewsTabs}
+                options={({route}) => ({
+                    tabBarLabel: 'News',
+                    tabBarStyle: setTabBarStyle(route),
+                    // tabBarVisible: route.state && route.state.index === 0,
+                    tabBarIcon: ({color, size}) => (
+                        <FontAwesome5 
+                            name='newspaper'
                             color={color}
                             size={size}
                         />

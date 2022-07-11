@@ -20,7 +20,7 @@ import { useTheme } from '@react-navigation/native';
 
 const EditProfileScreen = () => {
   const { colors } = useTheme();
-  const headerHeight = useHeaderHeight();
+  // const headerHeight = useHeaderHeight();
   const windowHeight = Dimensions.get('window').height;
   bs = React.createRef();
   fall = new Animated.Value(1);
@@ -178,14 +178,14 @@ const EditProfileScreen = () => {
 
   useEffect(() => {
     getUser();
-    console.log('Header Height : ', headerHeight);
+    // console.log('Header Height : ', headerHeight);
     console.log('Windows Height : ', windowHeight);
   }, []);
 
   return (
     
     <KeyboardAvoidingView 
-      keyboardVerticalOffset={headerHeight+200}
+      // keyboardVerticalOffset={headerHeight+200}
       behavior={"height"}  
       style={[styles.container,{backgroundColor: colors.background}]}
     >
